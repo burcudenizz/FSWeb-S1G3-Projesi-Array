@@ -124,10 +124,10 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(yeniDizi , sira ){
+function indekstekiCesitiGetir(sepet , elemanSirasi ){
   /*kod buraya*/
-  yeniDizi.slice(sira, sira+1 );
-  return yeniDizi;
+ let sonucEleman =  sepet[elemanSirasi];
+  return sonucEleman;
 }
 indekstekiCesitiGetir(orijinalTatlar, 2);
 
@@ -149,8 +149,10 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
 function ismeGoreCesitCikar(tatlar , alerjen){
   /*kod buraya*/
   const exitIndex = tatlar.indexOf(alerjen);
- tatlar.splice(exitIndex, 1);
-} ismeGoreCesitCikar(orijinalTatlar, "Tarçın") ;
+  console.log("exitIndex" , exitIndex);
+  console.log("exitIndex" , tatlar.splice(exitIndex,1));
+} 
+ismeGoreCesitCikar(orijinalTatlar, "Tarçın") ;
 
 
 /* Görev 7:
@@ -174,17 +176,17 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(yeniDizi,eleman){
+function ismeGoreFiltrele(raf,filtrelenecek){
   /*kod buraya*/
   let sepet = [];
-  for( let i =0; i< yeniDizi.length ; i++){
-    if(yeniDizi.includes(eleman)){
-    sepet.push(eleman);
-    return sepet;
-  } else {
-    return "Yok";
+  for( let i =0; i< raf.length ; i++){
+    let eldekiMalzeme = raf[i];
+    if(eldekiMalzeme.includes(filtrelenecek)){
+    sepet.push(eldekiMalzeme);
+  } 
 }
-}
+console.log("sepet" , sepet);
+return sepet;
 }
  ismeGoreFiltrele(orijinalTatlar, "Çikolata");
 
@@ -222,8 +224,12 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
 // ortalamaKelimeSayisi(orijinalTatlar);
 function ortalamaKelimeSayisi(ortalamaDizi){
   let kelime_sayisi = 0;
-
-}
+  const ortalamaDiziLength = ortalamaDizi.length;
+  for (let i =0; i <ortalamaDiziLength ;i++){
+    kelime_sayisi += ortalamaDizi[i].split("").length;
+  }
+return kelime_sayisi / ortalamaDiziLength;
+} console.log(ortalamaKelimeSayisi(orijinalTatlar));
 
 /* ALIŞTIRMA 2:
 Firma mevcut tatların yanında artık mevsimlik lezzetler ve hatta bölgesel lezzetler de sunmaktadır. Toplam 25 lezzet aromasını
