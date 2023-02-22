@@ -201,11 +201,21 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
 
-function ortalamaKelimeSayisi(dizi){
+function ortalamaKelimeSayisi(ortalamaDizi){
   /*kod buraya*/
-  sum += dizi.length;
-}
+  const kelimeSayisiDizisi = [];
 
+  let kelimeToplami = 0;
+  for(let i=0; i<ortalamaDizi.length; i++){
+    let elimdekiKelimeGrubu = ortalamaDizi[i];
+    if(elimdekiKelimeGrubu.includes(" ")){
+      kelimeSayisiDizisi.push(minKelimeSayisi + 1);
+
+  }
+}
+console.log(kelimeSayisiDizisi);
+}
+ortalamaKelimeSayisi(orijinalTatlar);
 
 /* ALIŞTIRMA 2:
 Firma mevcut tatların yanında artık mevsimlik lezzetler ve hatta bölgesel lezzetler de sunmaktadır. Toplam 25 lezzet aromasını
