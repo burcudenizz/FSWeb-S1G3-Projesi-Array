@@ -45,7 +45,7 @@ function kopyala(marketteNeVarsa){
   let orijinalTatlarKopya = [...marketteNeVarsa];
   return orijinalTatlarKopya;
 } 
-console.log(kopyala(marketteNeVarsa)) ;
+console.log(kopyala(orijinalTatlar)) ;
 
 
 /* Görev 2:
@@ -179,10 +179,11 @@ function ismeGoreFiltrele(yeniDizi,eleman){
   let sepet = [];
   for( let i =0; i< yeniDizi.length ; i++){
     if(yeniDizi.includes(eleman)){
-    newArray.push(eleman);
-    return newArray;
+    sepet.push(eleman);
+    return sepet;
   } else {
     return "Yok";
+}
 }
 }
  ismeGoreFiltrele(orijinalTatlar, "Çikolata");
@@ -201,21 +202,28 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
 
+// function ortalamaKelimeSayisi(ortalamaDizi){
+//   /*kod buraya*/
+//   const kelimeSayisiDizisi = [];
+//   let kelimeToplami = 0;
+
+//   for(let i=0; i<ortalamaDizi.length; i++){
+//     let elimdekiKelimeGrubu = ortalamaDizi[i];
+//     if(elimdekiKelimeGrubu.includes(" ")){
+//       kelimeSayisiDizisi.push(2);
+//       kelimeToplami = kelimeToplami + 2;
+//   } else{
+//       kelimeSayisiDizisi.push(1);
+//       kelimeToplami = kelimeToplami+1;
+//   }
+// }
+// console.log(kelimeSayisiDizisi);
+// }
+// ortalamaKelimeSayisi(orijinalTatlar);
 function ortalamaKelimeSayisi(ortalamaDizi){
-  /*kod buraya*/
-  const kelimeSayisiDizisi = [];
+  let kelime_sayisi = 0;
 
-  let kelimeToplami = 0;
-  for(let i=0; i<ortalamaDizi.length; i++){
-    let elimdekiKelimeGrubu = ortalamaDizi[i];
-    if(elimdekiKelimeGrubu.includes(" ")){
-      kelimeSayisiDizisi.push(minKelimeSayisi + 1);
-
-  }
 }
-console.log(kelimeSayisiDizisi);
-}
-ortalamaKelimeSayisi(orijinalTatlar);
 
 /* ALIŞTIRMA 2:
 Firma mevcut tatların yanında artık mevsimlik lezzetler ve hatta bölgesel lezzetler de sunmaktadır. Toplam 25 lezzet aromasını
