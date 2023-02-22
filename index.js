@@ -40,9 +40,11 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
+function kopyala(yeniDizi){
   /*kod buraya*/
-}
+   yeniDizi = [...orijinalTatlar];
+  return yeniDizi;
+} 
 
 
 /* Görev 2:
