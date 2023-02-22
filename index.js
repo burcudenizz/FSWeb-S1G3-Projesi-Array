@@ -40,12 +40,13 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(copy){
+function kopyala(marketteNeVarsa){
   /*kod buraya*/
-   copy = [...orijinalTatlar];
-  return copy;
+  let orijinalTatlarKopya = [...marketteNeVarsa];
+  return orijinalTatlarKopya;
 } 
-kopyala(orijinalTatlar);
+console.log(kopyala(marketteNeVarsa)) ;
+
 
 /* Görev 2:
 Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları kabul etmelidir:
@@ -58,14 +59,16 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(yeniDizi){
+function dizi25Cesitmi(diziKontrol){
   /*kod buraya*/
-  if(yeniDizi.length === 25){
+  if(diziKontrol.length === 25){
     return true;
   } else {
     return false;
   }
+  console.log("25 mi" , diziKontrol.length);
 } 
+
 dizi25Cesitmi(orijinalTatlar);
 
 /* Görev 3:
@@ -143,11 +146,10 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(yeniDizi , eleman){
+function ismeGoreCesitCikar(tatlar , alerjen){
   /*kod buraya*/
-  let index = yeniDizi.indexOf(eleman);
-  yeniDizi.splice(index,1);
-  return yeniDizi;
+  const exitIndex = tatlar.indexOf(alerjen);
+ tatlar.splice(exitIndex, 1);
 } ismeGoreCesitCikar(orijinalTatlar, "Tarçın") ;
 
 
@@ -171,10 +173,12 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
   Bu sorunu çözmek için GELİŞMİŞ DİZİ YÖNTEMLERİNİ (yani .filter) KULLANMAYIN.
 */
 
-let newArray = [];
+
 function ismeGoreFiltrele(yeniDizi,eleman){
   /*kod buraya*/
-  if(yeniDizi.includes(eleman)){
+  let sepet = [];
+  for( let i =0; i< yeniDizi.length ; i++){
+    if(yeniDizi.includes(eleman)){
     newArray.push(eleman);
     return newArray;
   } else {
@@ -277,4 +281,3 @@ module.exports = {
   ortalamaKelimeSayisi,
   rastgeleTatlar
 }
-
